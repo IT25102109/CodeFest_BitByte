@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Ashen Archive — Case Log</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="page">
+
+  <header class="masthead">
+    <div class="masthead-left">
+      <h1>The Ashen Archive</h1>
+      <p class="subtitle">Case Log — Sub-track 1C, iterative research assistant</p>
+    </div>
+    <div class="masthead-right" id="corpusStats">
+      <span class="stat-line">— loading corpus —</span>
+    </div>
+  </header>
+
+  <main class="layout">
+
+    <section class="inquiry-panel">
+      <label for="questionInput" class="inquiry-label">New inquiry</label>
+      <textarea id="questionInput" rows="2"
+        placeholder="e.g. State the precise year in the Age of Shadows that marks the true founding of Gloamreach."></textarea>
+      <div class="inquiry-actions">
+        <button id="askBtn">Investigate</button>
+        <div class="sample-questions" id="sampleQuestions"></div>
+      </div>
+    </section>
+
+    <section class="trace-panel" id="tracePanel">
+      <div class="empty-state" id="emptyState">
+        <p>No inquiry opened yet.</p>
+        <p class="empty-sub">Ask a question above to watch the search unfold, step by step.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <template id="iterationTemplate">
+    <article class="iteration-card">
+      <div class="iteration-head">
+        <span class="iteration-tag"></span>
+        <span class="iteration-status">searching…</span>
+      </div>
+      <div class="query-line">
+        <span class="query-label">query</span>
+        <span class="query-text"></span>
+      </div>
+      <div class="results-list"></div>
+      <div class="verdict"></div>
+    </article>
+  </template>
+
+  <template id="resultChipTemplate">
+    <div class="result-chip">
+      <div class="chip-top">
+        <span class="chip-folder"></span>
+        <span class="chip-filename"></span>
+      </div>
+      <p class="chip-snippet"></p>
+    </div>
+  </template>
+
+  <section class="answer-panel hidden" id="answerPanel">
+    <div class="answer-eyebrow">Resolved</div>
+    <p class="answer-text" id="answerText"></p>
+    <p class="answer-source" id="answerSource"></p>
+    <p class="answer-meta" id="answerMeta"></p>
+  </section>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
