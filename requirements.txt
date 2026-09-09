@@ -1,0 +1,7 @@
+pdfplumber
+python-docx
+rank_bm25
+openai
+python-dotenv
+Flask
+Flask-Cors
